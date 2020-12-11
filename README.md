@@ -5,7 +5,7 @@
 - Create new file `Main.kt`.
 - Add `@file:JvmName("Main")` and `package dev.tony.helloworld` in `Main.kt`.
 
-## Gradle
+## Gradle (build.gradle)
 - Add in plugins `id 'application'`.
 - Add mainClassName and jar.
 
@@ -19,7 +19,7 @@ jar {
 }
 ```
 
-## Build
+## Build and Run
 - RUN: Gradle Tasks -> application -> run (Shift + F10).
 - JAR: Gradle Tasks -> build -> assemble (Build jar file in `/build/libs`).
 - Run jar file in terminal: `java -jar helloworld.jar`.
