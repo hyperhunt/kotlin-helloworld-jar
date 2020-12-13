@@ -25,3 +25,31 @@ jar {
 - Run jar file in terminal: `java -jar helloworld.jar`.
 
 Video guide on Russian [https://youtu.be/HCY4KXw7geM](https://youtu.be/HCY4KXw7geM)
+
+## JUnit5 in Gradle
+JUnit5 User Guide [see Gradle](https://junit.org/junit5/docs/current/user-guide/#running-tests-build-gradle)
+
+Add dependencies:
+```
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.0")
+}
+```
+To enable it:
+```
+test {
+    useJUnitPlatform()
+}
+```
+Filtering by tags or engines is also supported:
+```
+test {
+    useJUnitPlatform {
+        includeTags 'fast', 'smoke & feature-a'
+        // excludeTags 'slow', 'ci'
+        includeEngines 'junit-jupiter'
+        // excludeEngines 'junit-vintage'
+    }
+}
+```
